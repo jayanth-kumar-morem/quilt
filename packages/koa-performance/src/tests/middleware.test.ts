@@ -241,10 +241,15 @@ describe('client metrics middleware', () => {
         456,
       );
 
+      const clsEvent = createLifecycleEvent(
+        EventType.CumulativeLayoutShift,
+        0.1,
+      );
+
       const context = createMockContext({
         method: Method.Post,
         requestBody: createBody({
-          events: [ttfbEvent, ttfcpEvent, ttlcpEvent],
+          events: [ttfbEvent, ttfcpEvent, ttlcpEvent, clsEvent],
         }),
       });
 
@@ -253,6 +258,8 @@ describe('client metrics middleware', () => {
           Promise.resolve(),
         );
       });
+
+      expect(statsd.distribution).toHaveBeenCalledTimes(4);
 
       expect(statsd.distribution).toHaveBeenCalledWith(
         'time_to_first_byte',
@@ -269,6 +276,12 @@ describe('client metrics middleware', () => {
       expect(statsd.distribution).toHaveBeenCalledWith(
         'time_to_largest_contentful_paint',
         ttlcpEvent.start,
+        expect.any(Object),
+      );
+
+      expect(statsd.distribution).toHaveBeenCalledWith(
+        'cumulative_layout_shift',
+        clsEvent.start,
         expect.any(Object),
       );
     });

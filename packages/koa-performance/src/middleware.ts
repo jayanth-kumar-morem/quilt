@@ -4,8 +4,8 @@ import bodyParser from 'koa-bodyparser';
 import {StatusCode, Header} from '@shopify/network';
 import {
   EventType,
-  Navigation,
   LifecycleEvent,
+  Navigation,
   NavigationDefinition,
   NavigationMetadata,
 } from '@shopify/performance';
@@ -126,9 +126,14 @@ export function clientPerformanceMetrics({
             ? event.duration
             : event.start;
 
+        const roundedValue =
+          event.type === EventType.CumulativeLayoutShift
+            ? value
+            : Math.round(value);
+
         metrics.push({
           name: eventMetricName(event),
-          value: Math.round(value),
+          value: roundedValue,
           tags,
         });
       }
@@ -260,6 +265,7 @@ const EVENT_METRIC_MAPPING = {
   [EventType.TimeToFirstPaint]: LifecycleMetric.TimeToFirstPaint,
   [EventType.DomContentLoaded]: LifecycleMetric.DomContentLoaded,
   [EventType.FirstInputDelay]: LifecycleMetric.FirstInputDelay,
+  [EventType.CumulativeLayoutShift]: LifecycleMetric.CumulativeLayoutShift,
   [EventType.Load]: LifecycleMetric.Load,
 };
 
