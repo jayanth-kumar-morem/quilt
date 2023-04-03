@@ -1,5 +1,47 @@
 # Changelog
 
+## 6.0.1
+
+### Patch Changes
+
+- [#2608](https://github.com/Shopify/quilt/pull/2608) [`ba4da84d5`](https://github.com/Shopify/quilt/commit/ba4da84d5237603433f8097f79421bab6ea48f86) Thanks [@BPScott](https://github.com/BPScott)! - Use `import type` everywhere that we deal with importing types
+
+- Updated dependencies [[`ba4da84d5`](https://github.com/Shopify/quilt/commit/ba4da84d5237603433f8097f79421bab6ea48f86)]:
+  - @shopify/react-graphql@10.0.1
+  - @shopify/react-hooks@3.0.4
+  - @shopify/react-html@13.0.5
+  - @shopify/react-network@5.0.14
+
+## 6.0.0
+
+### Major Changes
+
+- [#2302](https://github.com/Shopify/quilt/pull/2302) [`96a5023e7`](https://github.com/Shopify/quilt/commit/96a5023e7106b91089e29c6a9826948b62bde150) Thanks [@vsumner](https://github.com/vsumner)! - Update Apollo from v2 to v3. Replace dependencies on `apollo-client`, `apollo-cache-inmemory` `apollo-link` and `apollo-link-context` with `@apollo/client`. When updating to Apollo v3, `@shopify/graphql-persisted`, `@shopify/graphql-testing`, `@shopify/react-graphql` and `@shopify/react-graphql-universal-provider` should all be updated at the same time, and you should follow the [Apollo3 migration guide](https://www.apollographql.com/docs/react/migrating/apollo-client-3-migration/).
+
+### Patch Changes
+
+- Updated dependencies [[`2f731db68`](https://github.com/Shopify/quilt/commit/2f731db6883193d3d9fe9ada9374fb7d4d8a762f), [`96a5023e7`](https://github.com/Shopify/quilt/commit/96a5023e7106b91089e29c6a9826948b62bde150), [`93ec0a0e5`](https://github.com/Shopify/quilt/commit/93ec0a0e57a1962a455f15a46977a3c05a02369f)]:
+  - @shopify/react-network@5.0.13
+  - @shopify/react-graphql@10.0.0
+  - @shopify/react-html@13.0.4
+
+## 5.0.17
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @shopify/react-graphql@9.3.2
+
+## 5.0.16
+
+### Patch Changes
+
+- Updated dependencies [[`2aa32e8b8`](https://github.com/Shopify/quilt/commit/2aa32e8b844bda24e9ed1b2747ad9b34491c6261)]:
+  - @shopify/react-hooks@3.0.3
+  - @shopify/react-graphql@9.3.1
+  - @shopify/react-network@5.0.12
+  - @shopify/react-html@13.0.3
+
 ## 5.0.15
 
 ### Patch Changes

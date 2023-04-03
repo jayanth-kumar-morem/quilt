@@ -1,5 +1,43 @@
 # Changelog
 
+## 7.7.2
+
+### Patch Changes
+
+- [#2608](https://github.com/Shopify/quilt/pull/2608) [`ba4da84d5`](https://github.com/Shopify/quilt/commit/ba4da84d5237603433f8097f79421bab6ea48f86) Thanks [@BPScott](https://github.com/BPScott)! - Use `import type` everywhere that we deal with importing types
+
+- Updated dependencies [[`ba4da84d5`](https://github.com/Shopify/quilt/commit/ba4da84d5237603433f8097f79421bab6ea48f86)]:
+  - @shopify/react-hooks@3.0.4
+  - @shopify/useful-types@5.1.2
+
+## 7.7.1
+
+### Patch Changes
+
+- [#2593](https://github.com/Shopify/quilt/pull/2593) [`2f731db68`](https://github.com/Shopify/quilt/commit/2f731db6883193d3d9fe9ada9374fb7d4d8a762f) Thanks [@BPScott](https://github.com/BPScott)! - Remove unneeded `void 0` class property initializations
+
+- [#2595](https://github.com/Shopify/quilt/pull/2595) [`93ec0a0e5`](https://github.com/Shopify/quilt/commit/93ec0a0e57a1962a455f15a46977a3c05a02369f) Thanks [@BPScott](https://github.com/BPScott)! - Use `import type` when importing types
+
+- Updated dependencies [[`2f731db68`](https://github.com/Shopify/quilt/commit/2f731db6883193d3d9fe9ada9374fb7d4d8a762f), [`93ec0a0e5`](https://github.com/Shopify/quilt/commit/93ec0a0e57a1962a455f15a46977a3c05a02369f)]:
+  - @shopify/react-effect@5.0.3
+  - @shopify/dates@2.0.3
+
+## 7.7.0
+
+### Minor Changes
+
+- [#2586](https://github.com/Shopify/quilt/pull/2586) [`946be5019`](https://github.com/Shopify/quilt/commit/946be5019e55483602f7f3488314326b7c8f3c7b) Thanks [@kamiro](https://github.com/kamiro)! - Restored React-Native compatability by removing unicode-mode Regex
+
+## 7.6.1
+
+### Patch Changes
+
+- [#2581](https://github.com/Shopify/quilt/pull/2581) [`2781826fa`](https://github.com/Shopify/quilt/commit/2781826fac6a036eeb5da2aba15ce54b21d03ca9) Thanks [@BPScott](https://github.com/BPScott)! - Replace dependency on `@shopify/decorators` with `@shopify/function-enhancers`
+
+- Updated dependencies [[`2781826fa`](https://github.com/Shopify/quilt/commit/2781826fac6a036eeb5da2aba15ce54b21d03ca9), [`2aa32e8b8`](https://github.com/Shopify/quilt/commit/2aa32e8b844bda24e9ed1b2747ad9b34491c6261)]:
+  - @shopify/dates@2.0.2
+  - @shopify/react-hooks@3.0.3
+
 ## 7.6.0
 
 ### Minor Changes

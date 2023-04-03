@@ -1,5 +1,60 @@
 # Changelog
 
+## 4.1.7
+
+### Patch Changes
+
+- [#2608](https://github.com/Shopify/quilt/pull/2608) [`ba4da84d5`](https://github.com/Shopify/quilt/commit/ba4da84d5237603433f8097f79421bab6ea48f86) Thanks [@BPScott](https://github.com/BPScott)! - Use `import type` everywhere that we deal with importing types
+
+- Updated dependencies [[`ba4da84d5`](https://github.com/Shopify/quilt/commit/ba4da84d5237603433f8097f79421bab6ea48f86)]:
+  - @shopify/react-async@5.2.2
+  - @shopify/react-html@13.0.5
+  - @shopify/react-network@5.0.14
+  - @shopify/react-cookie@2.0.14
+  - @shopify/react-hydrate@3.0.9
+
+## 4.1.6
+
+### Patch Changes
+
+- Updated dependencies [[`54f199856`](https://github.com/Shopify/quilt/commit/54f199856dab52d3f0415243b71d4d51d46038cb), [`c6f5d2f3d`](https://github.com/Shopify/quilt/commit/c6f5d2f3d839ddecdb70010dc7c777dd4f5d7e7a), [`40423a88d`](https://github.com/Shopify/quilt/commit/40423a88d022ac26a6549096bb2e42aeab08c42d)]:
+  - @shopify/sewing-kit-koa@9.2.0
+
+## 4.1.5
+
+### Patch Changes
+
+- [#2593](https://github.com/Shopify/quilt/pull/2593) [`2f731db68`](https://github.com/Shopify/quilt/commit/2f731db6883193d3d9fe9ada9374fb7d4d8a762f) Thanks [@BPScott](https://github.com/BPScott)! - Remove unneeded `void 0` class property initializations
+
+- [#2595](https://github.com/Shopify/quilt/pull/2595) [`93ec0a0e5`](https://github.com/Shopify/quilt/commit/93ec0a0e57a1962a455f15a46977a3c05a02369f) Thanks [@BPScott](https://github.com/BPScott)! - Use `import type` when importing types
+
+- Updated dependencies [[`2f731db68`](https://github.com/Shopify/quilt/commit/2f731db6883193d3d9fe9ada9374fb7d4d8a762f), [`93ec0a0e5`](https://github.com/Shopify/quilt/commit/93ec0a0e57a1962a455f15a46977a3c05a02369f)]:
+  - @shopify/react-async@5.2.1
+  - @shopify/react-effect@5.0.3
+  - @shopify/react-network@5.0.13
+  - @shopify/sewing-kit-koa@9.1.1
+  - @shopify/react-cookie@2.0.13
+  - @shopify/react-html@13.0.4
+  - @shopify/react-hydrate@3.0.8
+
+## 4.1.4
+
+### Patch Changes
+
+- Updated dependencies [[`bd204450f`](https://github.com/Shopify/quilt/commit/bd204450f847fa4f929ffc70ce9755a9b91c9118)]:
+  - @shopify/react-async@5.2.0
+
+## 4.1.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @shopify/react-async@5.1.1
+  - @shopify/react-cookie@2.0.12
+  - @shopify/react-hydrate@3.0.7
+  - @shopify/react-network@5.0.12
+  - @shopify/react-html@13.0.3
+
 ## 4.1.2
 
 ### Patch Changes

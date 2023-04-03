@@ -1,5 +1,48 @@
 # Changelog
 
+## 5.2.2
+
+### Patch Changes
+
+- [#2608](https://github.com/Shopify/quilt/pull/2608) [`ba4da84d5`](https://github.com/Shopify/quilt/commit/ba4da84d5237603433f8097f79421bab6ea48f86) Thanks [@BPScott](https://github.com/BPScott)! - Use `import type` everywhere that we deal with importing types
+
+- Updated dependencies [[`ba4da84d5`](https://github.com/Shopify/quilt/commit/ba4da84d5237603433f8097f79421bab6ea48f86)]:
+  - @shopify/async@4.0.3
+  - @shopify/react-hooks@3.0.4
+  - @shopify/react-idle@3.1.2
+  - @shopify/react-intersection-observer@4.0.4
+  - @shopify/useful-types@5.1.2
+  - @shopify/react-hydrate@3.0.9
+
+## 5.2.1
+
+### Patch Changes
+
+- [#2593](https://github.com/Shopify/quilt/pull/2593) [`2f731db68`](https://github.com/Shopify/quilt/commit/2f731db6883193d3d9fe9ada9374fb7d4d8a762f) Thanks [@BPScott](https://github.com/BPScott)! - Remove unneeded `void 0` class property initializations
+
+- [#2595](https://github.com/Shopify/quilt/pull/2595) [`93ec0a0e5`](https://github.com/Shopify/quilt/commit/93ec0a0e57a1962a455f15a46977a3c05a02369f) Thanks [@BPScott](https://github.com/BPScott)! - Use `import type` when importing types
+
+- Updated dependencies [[`2f731db68`](https://github.com/Shopify/quilt/commit/2f731db6883193d3d9fe9ada9374fb7d4d8a762f), [`93ec0a0e5`](https://github.com/Shopify/quilt/commit/93ec0a0e57a1962a455f15a46977a3c05a02369f)]:
+  - @shopify/react-effect@5.0.3
+  - @shopify/async@4.0.2
+  - @shopify/react-hydrate@3.0.8
+  - @shopify/react-idle@3.1.1
+  - @shopify/react-intersection-observer@4.0.3
+
+## 5.2.0
+
+### Minor Changes
+
+- [#2545](https://github.com/Shopify/quilt/pull/2545) [`bd204450f`](https://github.com/Shopify/quilt/commit/bd204450f847fa4f929ffc70ce9755a9b91c9118) Thanks [@devisscher](https://github.com/devisscher)! - Add a sensitivity check to the Prefetcher component
+
+## 5.1.1
+
+### Patch Changes
+
+- Updated dependencies [[`2aa32e8b8`](https://github.com/Shopify/quilt/commit/2aa32e8b844bda24e9ed1b2747ad9b34491c6261)]:
+  - @shopify/react-hooks@3.0.3
+  - @shopify/react-hydrate@3.0.7
+
 ## 5.1.0
 
 ### Minor Changes

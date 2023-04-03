@@ -1,18 +1,18 @@
-import {Context} from 'koa';
+import type {Context} from 'koa';
 import compose from 'koa-compose';
 import bodyParser from 'koa-bodyparser';
 import {StatusCode, Header} from '@shopify/network';
-import {
-  EventType,
+import type {
   LifecycleEvent,
-  Navigation,
   NavigationDefinition,
   NavigationMetadata,
 } from '@shopify/performance';
-import {StatsDClient, Logger} from '@shopify/statsd';
+import {EventType, Navigation} from '@shopify/performance';
+import type {Logger} from '@shopify/statsd';
+import {StatsDClient} from '@shopify/statsd';
 
 import {LifecycleMetric, NavigationMetric} from './enums';
-import {BrowserConnection} from './types';
+import type {BrowserConnection} from './types';
 
 interface Tags {
   [key: string]: string | number | boolean;
@@ -215,6 +215,7 @@ export function clientPerformanceMetrics({
       const distributions = metrics.map(({name, value, tags}) => {
         if (development) {
           appLogger.log(`Skipping sending metric in dev ${name}: ${value}`);
+          return undefined;
         } else {
           appLogger.log(`Sending metric ${name}: ${value}`);
           return statsd.distribution(name, value, tags);

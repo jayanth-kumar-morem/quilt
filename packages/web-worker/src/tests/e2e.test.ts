@@ -5,11 +5,12 @@
 import * as path from 'path';
 
 import {DefinePlugin} from 'webpack';
-import {Page, JSHandle, WebWorker} from 'puppeteer';
+import type {Page, JSHandle, WebWorker} from 'puppeteer';
 
 import {WebWorkerPlugin} from '../webpack-parts';
 
-import {withContext, Context, runWebpack as runWebpackBase} from './utilities';
+import type {Context} from './utilities';
+import {withContext, runWebpack as runWebpackBase} from './utilities';
 
 const babelPlugin = path.resolve(__dirname, '../babel-plugin.ts');
 const mainFile = 'src/main.js';
@@ -1171,7 +1172,10 @@ function runWebpack(
             {
               loader: 'babel-loader',
               options: {
+                configFile: false,
+                browserslistConfigFile: false,
                 babelrc: false,
+                targets: {},
                 plugins: [
                   '@babel/plugin-syntax-dynamic-import',
                   [babelPlugin, babelPluginOptions],

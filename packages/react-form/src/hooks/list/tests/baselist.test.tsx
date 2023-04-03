@@ -3,11 +3,12 @@ import React from 'react';
 import {faker} from '@faker-js/faker/locale/en';
 import {mount} from '@shopify/react-testing';
 
-import {useBaseList, FieldListConfig} from '../baselist';
-import {ListValidationContext} from '../../../types';
+import type {FieldListConfig} from '../baselist';
+import {useBaseList} from '../baselist';
+import type {ListValidationContext} from '../../../types';
 
+import type {Variant} from './utils';
 import {
-  Variant,
   randomVariants,
   changeEvent,
   alwaysFail,
@@ -214,6 +215,7 @@ describe('useBaseList', () => {
             if (value.length < 1) {
               return 'Price must be specified';
             }
+            return undefined;
           },
         };
 
@@ -383,6 +385,7 @@ describe('useBaseList', () => {
             if (anyDupes) {
               return 'No duplicates allowed';
             }
+            return undefined;
           },
         };
 

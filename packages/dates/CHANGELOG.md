@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.0.3
+
+### Patch Changes
+
+- [#2595](https://github.com/Shopify/quilt/pull/2595) [`93ec0a0e5`](https://github.com/Shopify/quilt/commit/93ec0a0e57a1962a455f15a46977a3c05a02369f) Thanks [@BPScott](https://github.com/BPScott)! - Use `import type` when importing types
+
+## 2.0.2
+
+### Patch Changes
+
+- [#2581](https://github.com/Shopify/quilt/pull/2581) [`2781826fa`](https://github.com/Shopify/quilt/commit/2781826fac6a036eeb5da2aba15ce54b21d03ca9) Thanks [@BPScott](https://github.com/BPScott)! - Replace dependency on `@shopify/decorators` with `@shopify/function-enhancers`
+
 ## 2.0.1
 
 ### Patch Changes

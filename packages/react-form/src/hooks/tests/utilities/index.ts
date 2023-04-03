@@ -1,7 +1,8 @@
 import {faker} from '@faker-js/faker/locale/en';
-import {Root} from '@shopify/react-testing';
+import type {Root} from '@shopify/react-testing';
 
-import {SimpleProduct, TextField} from './components';
+import type {SimpleProduct} from './components';
+import {TextField} from './components';
 
 export * from './components';
 

@@ -1,12 +1,13 @@
 import * as path from 'path';
 
 import webpack from 'webpack';
+import type {Configuration} from 'webpack';
 
-import {Context} from './context';
+import type {Context} from './context';
 
 export function runWebpack(
   {workspace, server}: Context,
-  extraConfig: import('webpack').Configuration,
+  extraConfig: Configuration,
 ) {
   return new Promise((resolve, reject) => {
     const srcRoot = path.resolve(__dirname, '../../');
@@ -15,6 +16,7 @@ export function runWebpack(
     webpack(
       {
         ...extraConfig,
+        target: 'web',
         output: {
           path: workspace.buildPath(),
           publicPath: server.assetUrl().href,
@@ -43,11 +45,10 @@ export function runWebpack(
                   loader: 'babel-loader',
                   options: {
                     configFile: false,
+                    browserslistConfigFile: false,
+                    targets: 'current node',
                     presets: [
-                      [
-                        '@babel/preset-env',
-                        {targets: {node: true}, modules: false, loose: true},
-                      ],
+                      ['@babel/preset-env', {modules: false, loose: true}],
                       '@babel/preset-typescript',
                     ],
                     plugins: [

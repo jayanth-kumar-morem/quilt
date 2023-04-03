@@ -1,14 +1,9 @@
 import {faker} from '@faker-js/faker/locale/en';
-import {
-  Navigation,
-  NavigationResult,
-  Performance,
-  LifecycleEvent,
-  EventType,
-} from '@shopify/performance';
+import type {Performance, LifecycleEvent} from '@shopify/performance';
+import {Navigation, NavigationResult, EventType} from '@shopify/performance';
 
-import {NavigationListener} from '../navigation-listener';
-import {LifecycleEventListener} from '../lifecycle-event-listener';
+import type {NavigationListener} from '../navigation-listener';
+import type {LifecycleEventListener} from '../lifecycle-event-listener';
 
 interface TestInterface {
   simulateNavigation(navigation?: Navigation): Navigation;
@@ -103,7 +98,7 @@ export function mockNavigation() {
       duration: faker.datatype.number({min: 0, max: 100000}),
       target: faker.internet.url(),
       events: [],
-      result: randomNavigationResult(),
+      result: NavigationResult.Finished,
     },
     {
       index: faker.datatype.number(),

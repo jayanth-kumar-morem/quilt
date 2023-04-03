@@ -1,5 +1,31 @@
 # Changelog
 
+## 4.0.0
+
+### Major Changes
+
+- [#2618](https://github.com/Shopify/quilt/pull/2618) [`0a1b2e16e`](https://github.com/Shopify/quilt/commit/0a1b2e16ed7e1f267d9c28a94f637724c1e67140) Thanks [@CameronGorrie](https://github.com/CameronGorrie)! - cacheEffectiveness uses cache ratio based on cache hit information discerned from transferSize and decodedBodySize properties
+
+## 3.2.5
+
+### Patch Changes
+
+- [#2616](https://github.com/Shopify/quilt/pull/2616) [`f1eafee08`](https://github.com/Shopify/quilt/commit/f1eafee08d4fd00b50431c3d3c9bfa5b3397ac26) Thanks [@ryanwilsonperkin](https://github.com/ryanwilsonperkin)! - Workaround quirk in React Router v6 that causes navigation to end prematurely
+
+## 3.2.4
+
+### Patch Changes
+
+- [#2608](https://github.com/Shopify/quilt/pull/2608) [`ba4da84d5`](https://github.com/Shopify/quilt/commit/ba4da84d5237603433f8097f79421bab6ea48f86) Thanks [@BPScott](https://github.com/BPScott)! - Use `import type` everywhere that we deal with importing types
+
+## 3.2.3
+
+### Patch Changes
+
+- [#2593](https://github.com/Shopify/quilt/pull/2593) [`2f731db68`](https://github.com/Shopify/quilt/commit/2f731db6883193d3d9fe9ada9374fb7d4d8a762f) Thanks [@BPScott](https://github.com/BPScott)! - Remove unneeded `void 0` class property initializations
+
+- [#2595](https://github.com/Shopify/quilt/pull/2595) [`93ec0a0e5`](https://github.com/Shopify/quilt/commit/93ec0a0e57a1962a455f15a46977a3c05a02369f) Thanks [@BPScott](https://github.com/BPScott)! - Use `import type` when importing types
+
 ## 3.2.2
 
 ### Patch Changes

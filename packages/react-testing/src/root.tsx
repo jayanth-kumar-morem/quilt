@@ -7,8 +7,7 @@ import {findCurrentFiberUsingSlowPath} from 'react-reconciler/reflection.js';
 import {TestWrapper} from './TestWrapper';
 import {Element} from './element';
 import {createRoot, getInternals, enqueueTask, isLegacyReact} from './compat';
-import {
-  Tag,
+import type {
   Fiber,
   Node,
   Predicate,
@@ -21,6 +20,7 @@ import {
   KeyPathFunction,
   ExtractKeypath,
 } from './types';
+import {Tag} from './types';
 
 type ResolveRoot = (element: Element<unknown>) => Element<unknown> | null;
 type Render = (
@@ -79,7 +79,7 @@ export class Root<Props> implements Node<Props> {
   private resolveRoot: ResolveRoot;
 
   private get mounted() {
-    return this.wrapper != null;
+    return this.wrapper != null && this.wrapper.rootRef != null;
   }
 
   constructor(
@@ -340,7 +340,7 @@ export class Root<Props> implements Node<Props> {
   private update() {
     if (this.wrapper == null) {
       this.root = null;
-    } else {
+    } else if (this.mounted) {
       const rootFiber = getInternals(this.wrapper.rootRef as any);
       const topElement = fiberToElement(
         findCurrentFiberUsingSlowPath(rootFiber),
@@ -352,7 +352,7 @@ export class Root<Props> implements Node<Props> {
   }
 
   private ensureRoot() {
-    if (this.wrapper == null || this.root == null) {
+    if (!this.mounted || this.root == null) {
       throw new Error(
         'Attempted to operate on a mounted tree, but the component is no longer mounted',
       );

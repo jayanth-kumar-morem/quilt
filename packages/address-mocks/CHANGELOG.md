@@ -1,5 +1,29 @@
 # Changelog
 
+## 3.2.0
+
+### Minor Changes
+
+- [#2522](https://github.com/Shopify/quilt/pull/2522) [`f0359c52c`](https://github.com/Shopify/quilt/commit/f0359c52c51c96078ac9e1902411fd1f3df2bc42) Thanks [@cejaekl](https://github.com/cejaekl)! - Add the ability to handle the `includeHiddenZones` variable in `mockCountryRequests()`
+
+## 3.1.7
+
+### Patch Changes
+
+- [#2608](https://github.com/Shopify/quilt/pull/2608) [`ba4da84d5`](https://github.com/Shopify/quilt/commit/ba4da84d5237603433f8097f79421bab6ea48f86) Thanks [@BPScott](https://github.com/BPScott)! - Use `import type` everywhere that we deal with importing types
+
+- Updated dependencies [[`ba4da84d5`](https://github.com/Shopify/quilt/commit/ba4da84d5237603433f8097f79421bab6ea48f86)]:
+  - @shopify/jest-dom-mocks@4.1.2
+
+## 3.1.6
+
+### Patch Changes
+
+- [#2595](https://github.com/Shopify/quilt/pull/2595) [`93ec0a0e5`](https://github.com/Shopify/quilt/commit/93ec0a0e57a1962a455f15a46977a3c05a02369f) Thanks [@BPScott](https://github.com/BPScott)! - Use `import type` when importing types
+
+- Updated dependencies [[`2f731db68`](https://github.com/Shopify/quilt/commit/2f731db6883193d3d9fe9ada9374fb7d4d8a762f), [`93ec0a0e5`](https://github.com/Shopify/quilt/commit/93ec0a0e57a1962a455f15a46977a3c05a02369f)]:
+  - @shopify/jest-dom-mocks@4.1.1
+
 ## 3.1.5
 
 ### Patch Changes

@@ -1,8 +1,8 @@
-import {
-  StatsD,
+import type {
   ClientOptions as HotShotClientOptions,
   ChildClientOptions as HotShotChildOptions,
 } from 'hot-shots';
+import {StatsD} from 'hot-shots';
 import {snakeCase} from 'change-case';
 
 const UNKNOWN = 'Unknown';
@@ -127,11 +127,16 @@ export class StatsDClient {
     });
   }
 
-  increment(stat: string | string[], tags?: Tags, options: MetricOptions = {}) {
+  increment(
+    stat: string | string[],
+    tags?: Tags,
+    options: MetricOptions = {},
+    value = 1,
+  ) {
     return new Promise<void>((resolve) => {
       this.statsd.increment(
         stat,
-        1,
+        value,
         options.sampleRate,
         this.normalizeTags(tags),
         this.createCallback(resolve),

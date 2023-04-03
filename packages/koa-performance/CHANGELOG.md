@@ -1,5 +1,46 @@
 # Changelog
 
+## 3.4.8
+
+### Patch Changes
+
+- Updated dependencies [[`0a1b2e16e`](https://github.com/Shopify/quilt/commit/0a1b2e16ed7e1f267d9c28a94f637724c1e67140)]:
+  - @shopify/performance@4.0.0
+
+## 3.4.7
+
+### Patch Changes
+
+- Updated dependencies [[`f1eafee08`](https://github.com/Shopify/quilt/commit/f1eafee08d4fd00b50431c3d3c9bfa5b3397ac26), [`e3db8be05`](https://github.com/Shopify/quilt/commit/e3db8be0599474ab132aaa86cf2f492929e8a6a8)]:
+  - @shopify/performance@3.2.5
+  - @shopify/statsd@4.3.0
+
+## 3.4.6
+
+### Patch Changes
+
+- [#2608](https://github.com/Shopify/quilt/pull/2608) [`ba4da84d5`](https://github.com/Shopify/quilt/commit/ba4da84d5237603433f8097f79421bab6ea48f86) Thanks [@BPScott](https://github.com/BPScott)! - Use `import type` everywhere that we deal with importing types
+
+- Updated dependencies [[`ba4da84d5`](https://github.com/Shopify/quilt/commit/ba4da84d5237603433f8097f79421bab6ea48f86)]:
+  - @shopify/performance@3.2.4
+  - @shopify/statsd@4.2.2
+
+## 3.4.5
+
+### Patch Changes
+
+- [#2595](https://github.com/Shopify/quilt/pull/2595) [`93ec0a0e5`](https://github.com/Shopify/quilt/commit/93ec0a0e57a1962a455f15a46977a3c05a02369f) Thanks [@BPScott](https://github.com/BPScott)! - Use `import type` when importing types
+
+- Updated dependencies [[`2f731db68`](https://github.com/Shopify/quilt/commit/2f731db6883193d3d9fe9ada9374fb7d4d8a762f), [`93ec0a0e5`](https://github.com/Shopify/quilt/commit/93ec0a0e57a1962a455f15a46977a3c05a02369f)]:
+  - @shopify/performance@3.2.3
+  - @shopify/statsd@4.2.1
+
+## 3.4.4
+
+### Patch Changes
+
+- [#2583](https://github.com/Shopify/quilt/pull/2583) [`2aa32e8b8`](https://github.com/Shopify/quilt/commit/2aa32e8b844bda24e9ed1b2747ad9b34491c6261) Thanks [@BPScott](https://github.com/BPScott)! - Add explict `return undefined` to functions that had implicit returns
+
 ## 3.4.3
 
 ### Patch Changes

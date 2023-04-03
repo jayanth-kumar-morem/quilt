@@ -1,8 +1,6 @@
 import {createHash} from 'crypto';
 
-import {
-  print,
-  parse,
+import type {
   DocumentNode as UntypedDocumentNode,
   DefinitionNode,
   SelectionSetNode,
@@ -11,7 +9,8 @@ import {
   SelectionNode,
   Location,
 } from 'graphql';
-import {DocumentNode, SimpleDocument} from 'graphql-typed';
+import {print, parse} from 'graphql';
+import type {DocumentNode, SimpleDocument} from 'graphql-typed';
 
 const IMPORT_REGEX = /^#import\s+['"]([^'"]*)['"];?[\s\n]*/gm;
 const DEFAULT_NAME = 'Operation';

@@ -1,22 +1,24 @@
 import {dirname, basename} from 'path';
 
-import {
+import type {
   GraphQLType,
   GraphQLNonNull,
   GraphQLList,
+  GraphQLLeafType,
+} from 'graphql';
+import {
   GraphQLString,
   GraphQLInt,
   GraphQLFloat,
   GraphQLBoolean,
-  GraphQLLeafType,
   isEnumType,
   isListType,
   isNonNullType,
   isObjectType,
   isScalarType,
 } from 'graphql';
-import {GraphQLProjectConfig} from 'graphql-config';
-import {AST, Field, Operation} from 'graphql-tool-utilities';
+import type {GraphQLProjectConfig} from 'graphql-config';
+import type {AST, Field, Operation} from 'graphql-tool-utilities';
 
 export type KeyPath = string;
 

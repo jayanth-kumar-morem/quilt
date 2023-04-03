@@ -27,6 +27,9 @@ module.exports = {
     '@shopify/jsx-no-hardcoded-content': 'off',
     // reports false positives with React's useRef hook
     'require-atomic-updates': 'off',
+    '@typescript-eslint/consistent-type-imports': 'error',
+    '@typescript-eslint/consistent-type-exports': 'error',
+    '@typescript-eslint/no-import-type-side-effects': 'error',
     '@typescript-eslint/no-unnecessary-type-arguments': 'off',
     '@typescript-eslint/no-unnecessary-condition': 'off',
     '@typescript-eslint/prefer-readonly': 'off',
@@ -35,6 +38,7 @@ module.exports = {
     '@typescript-eslint/no-misused-promises': 'off',
     '@typescript-eslint/await-thenable': 'off',
     'import/no-extraneous-dependencies': 'error',
+    'import/consistent-type-specifier-style': 'error',
     'no-restricted-imports': [
       'error',
       {
@@ -80,7 +84,6 @@ module.exports = {
       files: [
         '**/tests/**/*.ts',
         '**/tests/**/*.tsx',
-        '**/loom.config.ts',
         '**/*.test-d.ts',
         '**/*.test-d.tsx',
       ],
@@ -105,12 +108,6 @@ module.exports = {
         'prettier/prettier': 'off',
         'import/newline-after-import': 'off',
         'import/order': 'off',
-      },
-    },
-    {
-      files: ['**/loom.config.ts', 'config/loom/index.ts'],
-      rules: {
-        'babel/no-unused-expressions': 'off',
       },
     },
   ],

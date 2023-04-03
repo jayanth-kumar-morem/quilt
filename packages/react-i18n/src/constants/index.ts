@@ -185,7 +185,7 @@ export const RTL_LANGUAGES = [
 /* eslint-enable */
 
 export {
-  default as currencyDecimalPlaces,
+  currencyDecimalPlaces,
   DEFAULT_DECIMAL_PLACES,
 } from './currency-decimal-places';
 
@@ -217,4 +217,4 @@ export const CurrencyShortFormException = {
   HKD: 'HK$',
 } as const;
 
-export const DIRECTION_CONTROL_CHARACTERS = '\\p{Cf}';
+export const DIRECTION_CONTROL_CHARACTERS = '\u200E\u200F\u202A-\u202E';

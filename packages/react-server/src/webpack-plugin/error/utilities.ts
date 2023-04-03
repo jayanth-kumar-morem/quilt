@@ -1,6 +1,7 @@
-import {Compiler} from 'webpack';
+import type {Compiler} from 'webpack';
 
-import {noSourceExists, HEADER, Options, Entrypoint} from '../shared';
+import type {Options} from '../shared';
+import {noSourceExists, HEADER, Entrypoint} from '../shared';
 
 export function errorSSRComponentExists(options: Options, compiler: Compiler) {
   return !noSourceExists(Entrypoint.Error, options, compiler);

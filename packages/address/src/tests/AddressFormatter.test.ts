@@ -1,5 +1,5 @@
 import {fetch} from '@shopify/jest-dom-mocks';
-import {Address} from '@shopify/address-consts';
+import type {Address} from '@shopify/address-consts';
 import {mockCountryRequests} from '@shopify/address-mocks';
 
 import AddressFormatter from '../AddressFormatter';
@@ -136,6 +136,40 @@ describe('AddressFormatter', () => {
       await addressFormatter.getCountries();
 
       expect(fetch.calls()).toHaveLength(2);
+    });
+
+    it('returns hidden zones when `includeHiddenZones` is `true`.', async () => {
+      const addressFormatter = new AddressFormatter('en');
+      const loadedCountries = await addressFormatter.getCountries({
+        includeHiddenZones: true,
+      });
+      const indianZoneCodes = loadedCountries
+        .find(({code}) => code === 'IN')!
+        .zones.map((x) => x.code);
+
+      expect(indianZoneCodes).toContain('DH');
+    });
+
+    it('excludes hidden zones when `includeHiddenZones` is `false`.', async () => {
+      const addressFormatter = new AddressFormatter('en');
+      const loadedCountries = await addressFormatter.getCountries({
+        includeHiddenZones: false,
+      });
+      const indianZoneCodes = loadedCountries
+        .find(({code}) => code === 'IN')!
+        .zones.map((x) => x.code);
+
+      expect(indianZoneCodes).not.toContain('DH');
+    });
+
+    it('excludes hidden zones when `includeHiddenZones` is not passed.', async () => {
+      const addressFormatter = new AddressFormatter('en');
+      const loadedCountries = await addressFormatter.getCountries();
+      const indianZoneCodes = loadedCountries
+        .find(({code}) => code === 'IN')!
+        .zones.map((x) => x.code);
+
+      expect(indianZoneCodes).not.toContain('DH');
     });
   });
 

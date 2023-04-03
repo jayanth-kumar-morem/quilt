@@ -71,12 +71,12 @@ export interface LongTaskEvent extends BasicEvent {
 
 export interface ScriptDownloadEvent extends BasicEvent {
   type: EventType.ScriptDownload;
-  metadata: {name: string; size?: number};
+  metadata: {name: string; size?: number; cached?: boolean};
 }
 
 export interface StyleDownloadEvent extends BasicEvent {
   type: EventType.StyleDownload;
-  metadata: {name: string; size?: number};
+  metadata: {name: string; size?: number; cached?: boolean};
 }
 
 export interface GraphQLEvent extends BasicEvent {

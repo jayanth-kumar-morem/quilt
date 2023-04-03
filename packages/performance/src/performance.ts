@@ -1,7 +1,7 @@
 import {onCLS, onFCP, onFID, onLCP, onTTFB} from 'web-vitals';
 
 import {InflightNavigation} from './inflight';
-import {Navigation} from './navigation';
+import type {Navigation} from './navigation';
 import {
   hasGlobal,
   now,
@@ -12,7 +12,8 @@ import {
   withTiming,
   getResourceTypeFromEntry,
 } from './utilities';
-import {Event, EventType, LifecycleEvent} from './types';
+import type {Event, LifecycleEvent} from './types';
+import {EventType} from './types';
 
 const WATCH_RESOURCE_TYPES = ['script', 'css', 'link'];
 
@@ -119,6 +120,7 @@ export class Performance {
             metadata: {
               name: entry.name,
               size: entry.encodedBodySize,
+              cached: entry.transferSize === 0 && entry.decodedBodySize > 0,
             },
           },
           {replace: true},

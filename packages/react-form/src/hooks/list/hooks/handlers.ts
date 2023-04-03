@@ -1,20 +1,20 @@
-import {ChangeEvent, useMemo} from 'react';
+import type {ChangeEvent} from 'react';
+import {useMemo} from 'react';
 
 import {mapObject, isChangeEvent} from '../../../utilities';
-import {
+import type {
   FieldDictionary,
   FieldState,
   NormalizedValidationDictionary,
 } from '../../../types';
 import {runValidation} from '../utils';
 
+import type {ListState, ListAction} from './index';
 import {
   updateAction,
   updateErrorAction,
   newDefaultAction,
   resetAction,
-  ListState,
-  ListAction,
 } from './index';
 
 export function useHandlers<Item extends object>(

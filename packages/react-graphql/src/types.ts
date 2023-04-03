@@ -1,23 +1,23 @@
-import React from 'react';
-import {
+import type {ReactNode} from 'react';
+import type {
   DocumentNode,
   GraphQLOperation,
   GraphQLData,
   GraphQLVariables,
   GraphQLDeepPartial,
 } from 'graphql-typed';
-import {QueryResult} from '@apollo/react-common';
-import {
+import type {
+  QueryResult,
   ErrorPolicy,
   OperationVariables,
   ApolloError,
   ApolloClient,
   WatchQueryFetchPolicy,
-} from 'apollo-client';
-import {IfEmptyObject, IfAllNullableKeys} from '@shopify/useful-types';
-import {AsyncComponentType, AsyncHookTarget} from '@shopify/react-async';
+} from '@apollo/client';
+import type {IfEmptyObject, IfAllNullableKeys} from '@shopify/useful-types';
+import type {AsyncComponentType, AsyncHookTarget} from '@shopify/react-async';
 
-import {QueryHookOptions} from './hooks';
+import type {QueryHookOptions} from './hooks';
 
 export type {
   GraphQLData,
@@ -33,7 +33,7 @@ export type VariableOptions<Variables> = IfEmptyObject<
 >;
 
 export type QueryProps<Data = any, Variables = OperationVariables> = {
-  children: (result: QueryResult<Data, Variables>) => React.ReactNode;
+  children: (result: QueryResult<Data, Variables>) => ReactNode;
   fetchPolicy?: WatchQueryFetchPolicy;
   errorPolicy?: ErrorPolicy;
   notifyOnNetworkStatusChange?: boolean;

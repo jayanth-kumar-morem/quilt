@@ -12,39 +12,36 @@ import {
   isLessThanOneWeekAway,
   isLessThanOneYearAway,
 } from '@shopify/dates';
-import {memoize} from '@shopify/decorators';
+import {memoize} from '@shopify/function-enhancers';
 import {languageFromLocale, regionFromLocale} from '@shopify/i18n';
 
-import {
+import type {
   I18nDetails,
   PrimitiveReplacementDictionary,
   ComplexReplacementDictionary,
   TranslationDictionary,
-  LanguageDirection,
 } from './types';
+import {LanguageDirection} from './types';
+import type {Weekday} from './constants';
 import {
   dateStyle,
   DateStyle,
   DEFAULT_WEEK_START_DAY,
   WEEK_START_DAYS,
   RTL_LANGUAGES,
-  Weekday,
   currencyDecimalPlaces,
   DEFAULT_DECIMAL_PLACES,
   DIRECTION_CONTROL_CHARACTERS,
   EASTERN_NAME_ORDER_FORMATTERS,
   CurrencyShortFormException,
 } from './constants';
-import {
-  MissingCurrencyCodeError,
-  MissingCountryError,
-  I18nError,
-} from './errors';
+import type {I18nError} from './errors';
+import {MissingCurrencyCodeError, MissingCountryError} from './errors';
+import type {TranslateOptions as RootTranslateOptions} from './utilities';
 import {
   getCurrencySymbol,
   translate,
   getTranslationTree,
-  TranslateOptions as RootTranslateOptions,
   memoizedNumberFormatter,
   memoizedPluralRules,
   convertFirstSpaceToNonBreakingSpace,
@@ -68,7 +65,8 @@ const NEGATIVE_SIGN = '-';
 const REGEX_DIGITS = /\d/g;
 const REGEX_NON_DIGITS = /\D/g;
 const REGEX_PERIODS = /\./g;
-const NEGATIVE_CHARACTERS = '\\p{Pd}\u2212';
+const NEGATIVE_CHARACTERS =
+  '\u002D\u058A\u05BE\u1806\u2010-\u2015\u2212\u2796\u2E3A\u2E3B\uFE58\uFE63\uFF0D';
 
 export class I18n {
   readonly locale: string;
@@ -396,8 +394,8 @@ export class I18n {
     return Boolean(easternNameOrderFormatter);
   }
 
-  @memoize()
-  numberSymbols() {
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  numberSymbols = memoize(() => {
     const formattedNumber = this.formatNumber(123456.7, {
       maximumFractionDigits: 1,
       minimumFractionDigits: 1,
@@ -411,7 +409,7 @@ export class I18n {
       }
     }
     return {thousandSymbol, decimalSymbol};
-  }
+  });
 
   private formatCurrencyAuto(
     amount: number,
@@ -449,7 +447,7 @@ export class I18n {
     const formattedAmount = this.formatCurrencyNone(amount, options);
     const negativeRegex = new RegExp(
       `[${DIRECTION_CONTROL_CHARACTERS}]*[${NEGATIVE_CHARACTERS}]`,
-      'gu',
+      'g',
     );
     const negativeMatch = negativeRegex.exec(formattedAmount)?.shift() || '';
 
