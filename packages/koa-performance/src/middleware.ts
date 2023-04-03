@@ -121,19 +121,18 @@ export function clientPerformanceMetrics({
             tags,
           });
         }
-        const value =
+        let value =
           event.type === EventType.FirstInputDelay
             ? event.duration
             : event.start;
 
-        const roundedValue =
-          event.type === EventType.CumulativeLayoutShift
-            ? value
-            : Math.round(value);
+        // For CLS we multiply the value by 100 to avoid statsd issues with real numbers.
+        value =
+          event.type === EventType.CumulativeLayoutShift ? value * 100 : value;
 
         metrics.push({
           name: eventMetricName(event),
-          value: roundedValue,
+          value: Math.round(value),
           tags,
         });
       }

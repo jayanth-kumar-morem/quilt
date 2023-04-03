@@ -280,7 +280,7 @@ describe('client metrics middleware', () => {
 
       expect(statsd.distribution).toHaveBeenCalledWith(
         'cumulative_layout_shift',
-        clsEvent.start,
+        clsEvent.start * 100,
         expect.any(Object),
       );
     });
